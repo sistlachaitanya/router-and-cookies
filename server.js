@@ -7,9 +7,7 @@ const cookieParser = require("cookie-parser");
 app.use(cookieParser("secretcode"));
 
 app.get("/getcookies", (req, res) => {
-  res.cookie("greet", "namaste");
-  res.cookie("MadeIn", "India");
-  res.cookie("Greet", "Ram Ram");
+  res.cookie("name", "Vasudeva");
   res.send("sent u some cookies");
 });
 
@@ -30,7 +28,7 @@ app.get("/getsignedcookie", (req, res) => {
 app.get("/verify", (req, res) => {
   console.log(req.signedCookies);
   res.send("verified");
-})
+});
 
 app.get("/", (req, res) => {
   console.dir(req.cookies);
